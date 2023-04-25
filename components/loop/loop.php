@@ -584,6 +584,7 @@ function amp_loop_category(){
 	if (isset($cat_id)) {
 		$cat_name = get_cat_name($cat_id);
 	}
+	if(is_array($categories)){
 	if( count($categories) > 0 && empty($cat_id)){
 		echo ' <ul class="loop-category">';
 			foreach($categories as $category) {
@@ -610,7 +611,7 @@ function amp_loop_category(){
 			echo '<li class="amp-cat-'. esc_attr($cat_id) .'">'. esc_html($cat_name).'</li>';
 		}
 		echo '</ul>';
-	}
+	}}
 }
 // author
 function amp_loop_author($args = array()){
